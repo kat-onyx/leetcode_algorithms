@@ -26,8 +26,10 @@ var threeSum = function (nums) {
                 end -= 1;
 
             } else if (sum > 0) {
+                //move in b/c if sum is > 0 we know that the current ele is too large.
                 end -= 1;
             } else {
+                //move in since we know the current ele is too small
                 start += 1;
             }
         }
