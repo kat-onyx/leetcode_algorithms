@@ -26,16 +26,16 @@ var preorderTraversal = function (root) {
     return result;
   }
 
-  let stack = [root];
+  let queue = [root];
 
-  while (stack.length > 0) {
-    root = stack.shift();
+  while (queue.length > 0) {
+    root = queue.shift();
     result.push(root.val);
     if (root.right != null) {
-      stack.unshift(root.right)
+      queue.unshift(root.right)
     }
     if (root.left != null) {
-      stack.unshift(root.left)
+      queue.unshift(root.left)
     }
   }
 
