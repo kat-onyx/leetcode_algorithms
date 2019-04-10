@@ -1,4 +1,3 @@
-
 //
 // Given an array nums and a value val, remove all instances of that value in -place and return the new length.
 
@@ -19,7 +18,7 @@ var removeElement = function(nums, val) {
 //Runtime: 68 ms, faster than 41.30% of JavaScript online submissions for Remove Element.
 
 //iterative solution
-var preorderTraversal = function (root) {
+var preorderTraversal = function(root) {
   let result = [];
 
   if (root === null) {
@@ -32,13 +31,14 @@ var preorderTraversal = function (root) {
     root = queue.shift();
     result.push(root.val);
     if (root.right != null) {
-      queue.unshift(root.right)
+      queue.unshift(root.right);
     }
     if (root.left != null) {
-      queue.unshift(root.left)
+      queue.unshift(root.left);
     }
   }
 
-
   return result;
-}
+};
+
+//Runtime: 72 ms, faster than 27.01% of JavaScript online submissions for Binary Tree Preorder Traversal.
