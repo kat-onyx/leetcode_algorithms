@@ -17,3 +17,28 @@ var removeElement = function(nums, val) {
 };
 
 //Runtime: 68 ms, faster than 41.30% of JavaScript online submissions for Remove Element.
+
+//iterative solution
+var preorderTraversal = function (root) {
+  let result = [];
+
+  if (root === null) {
+    return result;
+  }
+
+  let stack = [root];
+
+  while (stack.length > 0) {
+    root = stack.shift();
+    result.push(root.val);
+    if (root.right != null) {
+      stack.unshift(root.right)
+    }
+    if (root.left != null) {
+      stack.unshift(root.left)
+    }
+  }
+
+
+  return result;
+}
