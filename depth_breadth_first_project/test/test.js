@@ -23,6 +23,7 @@ describe('depthFirstSearch()', () => {
         c.right = f;
     
         expect(depthFirstSearch(a, 'e')).to.equal(e);
+        console.log(e)
     });
 
     context('when multiple nodes of the tree contain the targetVal', () => {
