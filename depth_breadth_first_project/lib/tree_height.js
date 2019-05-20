@@ -7,8 +7,8 @@ function treeHeight(root, depth = 0) {
       answer = Math.max(depth, answer)
     }
 
-    treeHeight(root.left, depth + 1);
-    treeHeight(root.right, depth + 1);
+    if (root.left) treeHeight(root.left, depth + 1);
+    if (root.right) treeHeight(root.right, depth + 1);
 
     return answer;
 }

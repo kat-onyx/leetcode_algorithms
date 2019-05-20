@@ -23,7 +23,6 @@ describe('depthFirstSearch()', () => {
         c.right = f;
     
         expect(depthFirstSearch(a, 'e')).to.equal(e);
-        console.log(e)
     });
 
     context('when multiple nodes of the tree contain the targetVal', () => {
@@ -135,7 +134,8 @@ describe('treeHeight()', () => {
     });
 
     it('should return 0 if the tree only contains a root', () => {
-        let a = new TreeNode('a');
-        expect(treeHeight(a)).to.equal(0);
+        let lol = new TreeNode('lol');
+        console.log(lol)
+        expect(treeHeight(lol)).to.equal(0);
     });
 });

@@ -17,28 +17,4 @@ var removeElement = function(nums, val) {
 
 //Runtime: 68 ms, faster than 41.30% of JavaScript online submissions for Remove Element.
 
-//iterative solution
-var preorderTraversal = function(root) {
-  let result = [];
 
-  if (root === null) {
-    return result;
-  }
-
-  let queue = [root];
-
-  while (queue.length > 0) {
-    root = queue.shift();
-    result.push(root.val);
-    if (root.right != null) {
-      queue.unshift(root.right);
-    }
-    if (root.left != null) {
-      queue.unshift(root.left);
-    }
-  }
-
-  return result;
-};
-
-//Runtime: 72 ms, faster than 27.01% of JavaScript online submissions for Binary Tree Preorder Traversal.
