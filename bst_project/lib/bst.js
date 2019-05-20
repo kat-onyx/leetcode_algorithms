@@ -31,6 +31,43 @@ class BST {
             }
         }
     }
+
+    searchRecur(val, root=this.root) {
+        if (!root) {
+            return false;
+        }
+
+        if (val < root.val) {
+            return this.searchRecur(val, root.left)
+        } else if (val > root.val) {
+            return this.searchRecur(val, root.right)
+        } else {
+            return true;
+        }
+    } 
+
+    searchIter(val, root = this.root) {
+        if (!root) {
+            return false;
+        }
+
+        let stack = [root];
+        
+        while (stack.length > 0) {
+            let currentNode = stack.pop();
+            
+            if (currentNode) {
+                if (currentNode.val < val) {
+                    stack.push(currentNode.right)
+                } else if (currentNode.val > val) {
+                    stack.push(currentNode.left)
+                } else {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
 
 module.exports = {
